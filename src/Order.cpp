@@ -29,7 +29,7 @@ Order::Order( const std::string& theMarket, OrderSide theOrderSide, OrderType th
 }
 
 // static
-std::string toString( OrderSide side )
+constexpr std::string_view toString( OrderSide side )
 {
     switch( side )
     {
@@ -38,6 +38,7 @@ std::string toString( OrderSide side )
         case OrderSide::Sell:
             return "SELL";
     }
+    return {};
 }
 
 // static
